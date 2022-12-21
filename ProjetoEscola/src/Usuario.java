@@ -6,8 +6,9 @@ public class Usuario {
     private int idade;
     private String telefone;
     private String cidade;
+    private boolean atendente;
 
-    public Usuario(int id, String login, String senha, String cpf, int idade, String telefone, String cidade) {
+    public Usuario(int id, String login, String senha, String cpf, int idade, String telefone, String cidade, boolean atendente) {
         this.id = id;
         this.login = login;
         this.senha = senha;
@@ -15,11 +16,12 @@ public class Usuario {
         this.idade = idade;
         this.telefone = telefone;
         this.cidade = cidade;
+        this.atendente = atendente;
     }
 
     public Usuario() {
     }
-    
+
     public int getId() {
         return id;
     }
@@ -75,4 +77,14 @@ public class Usuario {
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
+
+    public boolean isAtendente() {
+        return atendente;
+    }
+
+    public void setAtendente(boolean atendente) {
+        this.atendente = atendente;
+    }
+
+    
 }

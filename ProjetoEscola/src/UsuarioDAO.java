@@ -9,7 +9,7 @@ public class UsuarioDAO {
     }
     
     public void inserirUsuario(Usuario usuario) {
-        String sql = "insert into usuario(id, login, senha, cpf, idade, telefone, cidade) values (?, ?, ?, ?, ?, ?, ?);";
+        String sql = "insert into usuario(id, login, senha, cpf, idade, telefone, cidade, atendente) values (?, ?, ?, ?, ?, ?, ?, ?);";
         
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -21,6 +21,7 @@ public class UsuarioDAO {
             ps.setInt(5, usuario.getIdade());
             ps.setString(6, usuario.getTelefone());
             ps.setString(7, usuario.getCidade());
+            ps.setBoolean(8, usuario.isAtendente());
             
             ps.executeUpdate();
             System.out.println("Usuario cadastrado!");
@@ -43,7 +44,6 @@ public class UsuarioDAO {
             return rs;
         } catch (SQLException e) {
             System.out.println("Erro ao tentar logar: " + e);
-            
             return null;
         }
     }

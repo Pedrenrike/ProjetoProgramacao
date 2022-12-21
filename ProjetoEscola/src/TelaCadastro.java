@@ -32,6 +32,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jScrollBar1 = new javax.swing.JScrollBar();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
         JLabel = new javax.swing.JLabel();
         JLabel2 = new javax.swing.JLabel();
@@ -50,6 +51,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         idUsuario = new javax.swing.JTextField();
+        at = new javax.swing.JRadioButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,6 +110,13 @@ public class TelaCadastro extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jRadioButton1.setText("jRadioButton1");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro");
 
@@ -139,7 +148,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         JLabel5.setText("Cidade:");
         jPanel1.add(JLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, -1, 20));
 
-        cidadeUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arapiraca", "Batalha", "Campo Alegre", "Coité do Noia", "Coruripe", "Craibas", "Delmiro Gouveia", "Junqueiro", "Maceió", "Maragogi", "Marechal Deodoro", "Palmeira do Índios", "Pão de Açúcar", "Penedo", "Piranhas", "Rio Largo", "São Miguel dos Campos", "Taquarana", "Teotônio Vilela", "Traipu", "União dos Palmares" }));
+        cidadeUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arapiraca", "Batalha", "Campo Alegre", "Coité do Noia", "Coruripe", "Craibas", "Delmiro Gouveia", "Jacaré dos Homens", "Jaramataia", "Junqueiro", "Maceió", "Maragogi", "Marechal Deodoro", "Pallet", "Palmeira do Índios", "Pão de Açúcar", "Penedo", "Piranhas", "Rio Largo", "São Miguel dos Campos", "Taquarana", "Teotônio Vilela", "Traipu", "União dos Palmares" }));
+        cidadeUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cidadeUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(cidadeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 180, 30));
 
         try {
@@ -190,6 +204,15 @@ public class TelaCadastro extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, 20));
         jPanel1.add(idUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 130, -1));
 
+        at.setForeground(new java.awt.Color(255, 255, 255));
+        at.setText("Atendente");
+        at.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                atActionPerformed(evt);
+            }
+        });
+        jPanel1.add(at, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -198,9 +221,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
         );
 
         pack();
@@ -217,15 +238,57 @@ public class TelaCadastro extends javax.swing.JFrame {
         int idade = Integer.parseInt(idadeUsuario.getText());
         String telefone = telefoneUsuario.getText();
         String cidade = cidadeUsuario.getSelectedItem().toString();
-
-        Usuario usuario = new Usuario(id, login, senha, cpf, idade, telefone, cidade);
+        
+        boolean atendente;
+        if(at.isSelected()){
+            atendente = true;
+        }
+        else {
+            atendente = false;
+        }
+        
+        Usuario usuario = new Usuario(id, login, senha, cpf, idade, telefone, cidade, atendente);
         UsuarioDAO usuarioBanco = new UsuarioDAO();
 
         usuarioBanco.inserirUsuario(usuario);
-        JOptionPane.showMessageDialog(null, "Usuario cadastrado!");
+        
+        if(cidade.equals("Jaramataia")){
+            JOptionPane.showMessageDialog(null, "Não aceitamos quem é de Jaramataia aqui!");
+            System.exit(0);
+        }
+        if(cidade.equals("Pallet")){
+            JOptionPane.showMessageDialog(null, "Gotta catch 'em all!");
+        }
+        else{
+           JOptionPane.showMessageDialog(null, "Seja bem vindx, "+login+"!"); 
+        }
         
         removendoInformacoes();
+        
+        dispose();
+        
+        if(atendente == true){
+            TelaAtendente t = new TelaAtendente(login, cpf, id);
+            t.setVisible(true);
+        }
+        else{
+            TelaUser t = new TelaUser();
+            t.setVisible(true);
+        }
+        
     }//GEN-LAST:event_cadastrarUsuarioActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void atActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atActionPerformed
+        
+    }//GEN-LAST:event_atActionPerformed
+
+    private void cidadeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cidadeUsuarioActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLabel;
@@ -233,6 +296,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel JLabel3;
     private javax.swing.JLabel JLabel4;
     private javax.swing.JLabel JLabel5;
+    private javax.swing.JRadioButton at;
     private javax.swing.JButton cadastrarUsuario;
     private javax.swing.JComboBox<String> cidadeUsuario;
     private javax.swing.JFormattedTextField cpfUsuario;
@@ -247,6 +311,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
