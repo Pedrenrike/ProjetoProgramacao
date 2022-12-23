@@ -4,7 +4,7 @@ public class Conexao {
     static Connection connection = null;
     String url = "jdbc:mysql://localhost:3306/projeto";
     String user = "root";
-    String password = "password";
+    String password = "";
 
     public Conexao() {
         try {
