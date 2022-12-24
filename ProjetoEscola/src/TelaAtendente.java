@@ -1,11 +1,11 @@
 public class TelaAtendente extends javax.swing.JFrame {
 
-    public TelaAtendente(String nome, String CPF, int ID) {
+    public TelaAtendente(String nome, String CPF, String idU) {
         initComponents();
         Usuario u = new Usuario();
         login.setText(nome);
         cpf.setText(CPF);
-        id.setText(""+ID);
+        id.setText(idU);
     }
     
     
@@ -234,7 +234,7 @@ public class TelaAtendente extends javax.swing.JFrame {
             .addComponent(jDesktopPane1)
         );
 
-        setSize(new java.awt.Dimension(944, 591));
+        setSize(new java.awt.Dimension(1115, 591));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

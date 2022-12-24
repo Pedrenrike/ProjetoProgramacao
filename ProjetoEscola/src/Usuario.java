@@ -8,8 +8,7 @@ public class Usuario {
     private String cidade;
     private boolean atendente;
 
-    public Usuario(int id, String login, String senha, String cpf, int idade, String telefone, String cidade, boolean atendente) {
-        this.id = id;
+    public Usuario(String login, String senha, String cpf, int idade, String telefone, String cidade, boolean atendente) {
         this.login = login;
         this.senha = senha;
         this.cpf = cpf;
@@ -85,6 +84,6 @@ public class Usuario {
     public void setAtendente(boolean atendente) {
         this.atendente = atendente;
     }
-
+    
     
 }

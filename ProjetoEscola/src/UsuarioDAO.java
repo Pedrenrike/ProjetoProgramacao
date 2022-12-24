@@ -9,19 +9,18 @@ public class UsuarioDAO {
     }
     
     public void inserirUsuario(Usuario usuario) {
-        String sql = "insert into usuario(id, login, senha, cpf, idade, telefone, cidade, atendente) values (?, ?, ?, ?, ?, ?, ?, ?);";
+        String sql = "insert into usuario(login, senha, cpf, idade, telefone, cidade, atendente) values (?, ?, ?, ?, ?, ?, ?);";
         
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             
-            ps.setInt(1, usuario.getId());
-            ps.setString(2, usuario.getLogin());
-            ps.setString(3, usuario.getSenha());
-            ps.setString(4, usuario.getCpf());
-            ps.setInt(5, usuario.getIdade());
-            ps.setString(6, usuario.getTelefone());
-            ps.setString(7, usuario.getCidade());
-            ps.setBoolean(8, usuario.isAtendente());
+            ps.setString(1, usuario.getLogin());
+            ps.setString(2, usuario.getSenha());
+            ps.setString(3, usuario.getCpf());
+            ps.setInt(4, usuario.getIdade());
+            ps.setString(5, usuario.getTelefone());
+            ps.setString(6, usuario.getCidade());
+            ps.setBoolean(7, usuario.isAtendente());
             
             ps.executeUpdate();
             System.out.println("Usuario cadastrado!");
@@ -30,14 +29,15 @@ public class UsuarioDAO {
         }
     }
     
-    public ResultSet autenticacaoLogin(Usuario usuario) {
-        String sql = "select * from usuario where login = ? and senha = ?";
+    public ResultSet autenticacaoLogin(Usuario u) {
+        String sql = "select * from usuario where login = ? and senha = ? and atendente = ?";
         
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             
-            ps.setString(1, usuario.getLogin());
-            ps.setString(2, usuario.getSenha());
+            ps.setString(1, u.getLogin());
+            ps.setString(2, u.getSenha());
+            ps.setBoolean(3, u.isAtendente());
             
             ResultSet rs = ps.executeQuery();
             

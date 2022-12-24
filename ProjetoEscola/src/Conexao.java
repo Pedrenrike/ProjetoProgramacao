@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class Conexao {
     static Connection connection = null;
-    String url = "jdbc:mysql://localhost:3306/projeto";
+    String url = "jdbc:mysql://localhost:3306/p";
     String user = "root";
     String password = "";
 

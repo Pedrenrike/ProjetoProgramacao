@@ -44,13 +44,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         telefoneUsuario = new javax.swing.JFormattedTextField();
         loginUsuario = new javax.swing.JTextField();
         idadeUsuario = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         senhaUsuario = new javax.swing.JPasswordField();
         cadastrarUsuario = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        idUsuario = new javax.swing.JTextField();
         at = new javax.swing.JRadioButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -171,11 +169,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         jPanel1.add(telefoneUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 180, 30));
         jPanel1.add(loginUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 180, 30));
         jPanel1.add(idadeUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 180, 30));
-
-        jLabel1.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Id:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, -1, 20));
         jPanel1.add(senhaUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 180, 30));
 
         cadastrarUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -202,8 +195,8 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Senha:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, 20));
-        jPanel1.add(idUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 130, -1));
 
+        at.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         at.setForeground(new java.awt.Color(255, 255, 255));
         at.setText("Atendente");
         at.addActionListener(new java.awt.event.ActionListener() {
@@ -211,7 +204,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 atActionPerformed(evt);
             }
         });
-        jPanel1.add(at, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 350, -1, -1));
+        jPanel1.add(at, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +221,6 @@ public class TelaCadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioActionPerformed
-        int id = Integer.parseInt(idUsuario.getText());
         String login = loginUsuario.getText();
         
         char[] aux = senhaUsuario.getPassword();
@@ -247,7 +239,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             atendente = false;
         }
         
-        Usuario usuario = new Usuario(id, login, senha, cpf, idade, telefone, cidade, atendente);
+        Usuario usuario = new Usuario(login, senha, cpf, idade, telefone, cidade, atendente);
         UsuarioDAO usuarioBanco = new UsuarioDAO();
 
         usuarioBanco.inserirUsuario(usuario);
@@ -267,7 +259,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         
         dispose();
         
-        if(atendente == true){
+        if(atendente){
+            String id = Integer.toString(usuario.getId());
+            
             TelaAtendente t = new TelaAtendente(login, cpf, id);
             t.setVisible(true);
         }
@@ -300,11 +294,9 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JButton cadastrarUsuario;
     private javax.swing.JComboBox<String> cidadeUsuario;
     private javax.swing.JFormattedTextField cpfUsuario;
-    private javax.swing.JTextField idUsuario;
     private javax.swing.JTextField idadeUsuario;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
