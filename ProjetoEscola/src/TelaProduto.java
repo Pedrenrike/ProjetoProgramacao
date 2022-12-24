@@ -232,11 +232,11 @@ public class TelaProduto extends javax.swing.JFrame {
     private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
         int id = Integer.parseInt(idProduto.getText());
         String nome = nomeProduto.getText();
-        String cnpjFornecedor = fornecedorCNPJ.getText();
+        //String cnpjFornecedor = fornecedorCNPJ.getText();
         String nomeFornecedor = fornecedorNome.getText();
-        String telefone = telefoneFornecedor.getText();
+        //String telefone = telefoneFornecedor.getText();
         
-        Produto produto = new Produto(id, nome, cnpjFornecedor, telefone, nomeFornecedor);
+        Produto produto = new Produto(id, nome);
         ProdutoDAO produtoBanco = new ProdutoDAO();
 
         produtoBanco.inserirProduto(produto);

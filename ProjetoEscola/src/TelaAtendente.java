@@ -8,8 +8,6 @@ public class TelaAtendente extends javax.swing.JFrame {
         id.setText(idU);
     }
     
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -63,8 +61,6 @@ public class TelaAtendente extends javax.swing.JFrame {
         setName("uiouoioiupoi"); // NOI18N
         setResizable(false);
 
-        buscar.setForeground(new java.awt.Color(204, 204, 204));
-        buscar.setText("Buscar...");
         buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarActionPerformed(evt);
@@ -253,19 +249,20 @@ public class TelaAtendente extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        
+        CadastrarProdutos p = new CadastrarProdutos();
+        p.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
-        buscar.setText("");
+
     }//GEN-LAST:event_buscarActionPerformed
 
     private void buscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscadorActionPerformed
         String busca = buscar.getText();
+        buscar.setText("");
         
-        if(busca.indent(1) == "1"){
-            System.out.println("Funcionou");
-        }
+        ProdutoDAO p = new ProdutoDAO();
+        p.consultarProduto(busca);
     }//GEN-LAST:event_buscadorActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

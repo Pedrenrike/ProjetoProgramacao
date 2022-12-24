@@ -5,12 +5,9 @@ public class Produto {
     private String telefone;
     private String nomeF;
 
-    public Produto(int id, String nome, String cnpj, String telefone, String nomeF) {
+    public Produto(int id, String nome) {
         this.id = id;
         this.nome = nome;
-        this.cnpj = cnpj;
-        this.telefone = telefone;
-        this.nomeF = nomeF;
     }
 
     public Produto() {
