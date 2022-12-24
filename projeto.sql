@@ -12,3 +12,13 @@ cidade		varchar(30)
 );
 
 select * from usuario;
+
+create table produto(
+id          integer not null primary key,
+nome		varchar(30) not null,
+cnpj		varchar(30),
+telefone	varchar(20),
+nomeF		varchar(30)	not null
+);
+
+select * from produto;
