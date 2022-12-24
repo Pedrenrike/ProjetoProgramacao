@@ -1,15 +1,17 @@
-import javax.swing.JOptionPane;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 
+/**
+ *
+ * @author Edilma
+ */
 public class TelaProduto extends javax.swing.JFrame {
-    
-    public void removendoInformacoes() {
-        nomeProduto.setText("");
-        fornecedorCNPJ.setText("");
-        fornecedorNome.setText("");
-        telefoneFornecedor.setText("");
-        senhaUsuario.setText("");
-    }
-    
+
+    /**
+     * Creates new form TelaProduto
+     */
     public TelaProduto() {
         initComponents();
     }
@@ -23,274 +25,57 @@ public class TelaProduto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
-        jDesktopPane2 = new javax.swing.JDesktopPane();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        JLabel5 = new javax.swing.JLabel();
-        cidadeUsuario = new javax.swing.JComboBox<>();
-        senhaUsuario = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
-        at = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        JLabel = new javax.swing.JLabel();
-        JLabel2 = new javax.swing.JLabel();
-        JLabel3 = new javax.swing.JLabel();
-        JLabel4 = new javax.swing.JLabel();
-        fornecedorCNPJ = new javax.swing.JFormattedTextField();
-        telefoneFornecedor = new javax.swing.JFormattedTextField();
-        nomeProduto = new javax.swing.JTextField();
-        fornecedorNome = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        cadastrarProduto = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        idProduto = new javax.swing.JTextField();
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jDesktopPane2Layout = new javax.swing.GroupLayout(jDesktopPane2);
-        jDesktopPane2.setLayout(jDesktopPane2Layout);
-        jDesktopPane2Layout.setHorizontalGroup(
-            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jDesktopPane2Layout.setVerticalGroup(
-            jDesktopPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jRadioButton1.setText("jRadioButton1");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
-
-        JLabel5.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        JLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel5.setText("Cidade:");
-
-        cidadeUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arapiraca", "Batalha", "Campo Alegre", "Coité do Noia", "Coruripe", "Craibas", "Delmiro Gouveia", "Jacaré dos Homens", "Jaramataia", "Junqueiro", "Maceió", "Maragogi", "Marechal Deodoro", "Pallet", "Palmeira do Índios", "Pão de Açúcar", "Penedo", "Piranhas", "Rio Largo", "São Miguel dos Campos", "Taquarana", "Teotônio Vilela", "Traipu", "União dos Palmares" }));
-        cidadeUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cidadeUsuarioActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Senha:");
-
-        at.setForeground(new java.awt.Color(255, 255, 255));
-        at.setText("Atendente");
-        at.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                atActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/usuarioCadastro.png"))); // NOI18N
-        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastro");
-
-        jPanel1.setBackground(new java.awt.Color(32, 27, 44));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        JLabel.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        JLabel.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel.setText("Nome:");
-        jPanel1.add(JLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, 10));
-
-        JLabel2.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        JLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel2.setText("CNPJ Fornecedor:");
-        jPanel1.add(JLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, 10));
-
-        JLabel3.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        JLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel3.setText("Fornecedor:");
-        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, 10));
-
-        JLabel4.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        JLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel4.setText("Telefone Fornecedor:");
-        jPanel1.add(JLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, -1, 10));
-
-        try {
-            fornecedorCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jPanel1.add(fornecedorCNPJ, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 180, 20));
-
-        try {
-            telefoneFornecedor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jPanel1.add(telefoneFornecedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 20));
-
-        nomeProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nomeProdutoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(nomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 180, 20));
-        jPanel1.add(fornecedorNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 180, 20));
-
-        jLabel1.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Id:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, 10));
-
-        cadastrarProduto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cadastrarProduto.setText("Cadastrar");
-        cadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarProdutoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(cadastrarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 230, 20));
-
-        jLabel2.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Cadastrar Produto");
-        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 20, 620, -1));
-        jPanel1.add(idProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 130, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 497, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
-        int id = Integer.parseInt(idProduto.getText());
-        String nome = nomeProduto.getText();
-        //String cnpjFornecedor = fornecedorCNPJ.getText();
-        String nomeFornecedor = fornecedorNome.getText();
-        //String telefone = telefoneFornecedor.getText();
-        
-        Produto produto = new Produto(id, nome);
-        ProdutoDAO produtoBanco = new ProdutoDAO();
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-        produtoBanco.inserirProduto(produto);
-        
-        removendoInformacoes();
-        
-        dispose();
-    }//GEN-LAST:event_cadastrarProdutoActionPerformed
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void atActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atActionPerformed
-        
-    }//GEN-LAST:event_atActionPerformed
-
-    private void cidadeUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cidadeUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cidadeUsuarioActionPerformed
-
-    private void nomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nomeProdutoActionPerformed
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaProduto().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel JLabel;
-    private javax.swing.JLabel JLabel2;
-    private javax.swing.JLabel JLabel3;
-    private javax.swing.JLabel JLabel4;
-    private javax.swing.JLabel JLabel5;
-    private javax.swing.JRadioButton at;
-    private javax.swing.JButton cadastrarProduto;
-    private javax.swing.JComboBox<String> cidadeUsuario;
-    private javax.swing.JFormattedTextField fornecedorCNPJ;
-    private javax.swing.JTextField fornecedorNome;
-    private javax.swing.JTextField idProduto;
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JDesktopPane jDesktopPane2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField nomeProduto;
-    private javax.swing.JPasswordField senhaUsuario;
-    private javax.swing.JFormattedTextField telefoneFornecedor;
     // End of variables declaration//GEN-END:variables
 }

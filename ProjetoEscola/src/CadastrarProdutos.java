@@ -40,7 +40,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         JLabel3 = new javax.swing.JLabel();
         produto = new javax.swing.JTextField();
         idProduto = new javax.swing.JTextField();
-        cadastrarUsuario = new javax.swing.JButton();
+        cadastrarProduto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -172,14 +172,14 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         jPanel1.add(produto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 180, 30));
         jPanel1.add(idProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 180, 30));
 
-        cadastrarUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cadastrarUsuario.setText("Cadastrar");
-        cadastrarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarProduto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cadastrarProduto.setText("Cadastrar");
+        cadastrarProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cadastrarUsuarioActionPerformed(evt);
+                cadastrarProdutoActionPerformed(evt);
             }
         });
-        jPanel1.add(cadastrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 230, 30));
+        jPanel1.add(cadastrarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, 230, 30));
 
         jLabel2.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,7 +206,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cadastrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarUsuarioActionPerformed
+    private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
         String nome = produto.getText();
         int id = Integer.parseInt(idProduto.getText());
         
@@ -220,7 +220,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         removendoInformacoes();
         
         dispose();
-    }//GEN-LAST:event_cadastrarUsuarioActionPerformed
+    }//GEN-LAST:event_cadastrarProdutoActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
@@ -241,7 +241,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
     private javax.swing.JLabel JLabel4;
     private javax.swing.JLabel JLabel5;
     private javax.swing.JRadioButton at;
-    private javax.swing.JButton cadastrarUsuario;
+    private javax.swing.JButton cadastrarProduto;
     private javax.swing.JComboBox<String> cidadeUsuario;
     private javax.swing.JFormattedTextField cpfUsuario;
     private javax.swing.JTextField idProduto;
