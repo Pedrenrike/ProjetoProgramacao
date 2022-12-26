@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.*;
 import javax.swing.JOptionPane;
 
 public class ProdutoDAO {
@@ -23,7 +24,7 @@ public class ProdutoDAO {
             System.out.println("Erro ao inserir produto: " + e);
         }
     }
-    public void consultarProduto(String nome){
+    public Produto consultarProduto(String nome){
         String sql="select * from produto;";
         
         try {
@@ -31,12 +32,48 @@ public class ProdutoDAO {
             ResultSet rst=sttmt.executeQuery();
             while(rst.next()){
                 if(nome.equals(rst.getString("nome"))){
-                    int id = rst.getInt("id"); 
-                    System.out.println("Dados do banco: "+nome+" "+id);
+                    Produto produto = new Produto();
+                    
+                    produto.setId(rst.getInt("id"));
+                    produto.setNome(rst.getString("nome"));
+                    produto.setQuant(rst.getInt("quant"));
+                    produto.setValor(rst.getDouble("valor"));
+                    produto.setComissão(rst.getDouble("comissão"));
+                    produto.setDescrição(rst.getString("descrição"));
+                    
+                    return produto;
                 }
             }
         } catch (SQLException ex) {
             System.out.println("Erro na consulta de pessoa: "+ex);
         }
+        Produto p = new Produto();
+        return p;
+    }
+    
+    public ArrayList<Produto> pegarProdutos(){
+        String sql="select * from produto;";
+        ArrayList<Produto> p = new ArrayList<>();
+        
+        try{
+        PreparedStatement sttmt=connection.prepareStatement(sql);
+        ResultSet rst=sttmt.executeQuery();
+        
+        while(rst.next()){
+            Produto produto = new Produto();
+            
+            produto.setId(rst.getInt("id"));
+            produto.setNome(rst.getString("nome"));
+            produto.setQuant(rst.getInt("quant"));
+            produto.setValor(rst.getDouble("valor"));
+            produto.setComissão(rst.getDouble("comissão"));
+            produto.setDescrição(rst.getString("descrição"));
+            
+            p.add(produto);
+        }
+        } catch(SQLException ex) {
+            System.out.println("Deu erro.");
+        }
+        return p;
     }
 }
