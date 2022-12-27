@@ -22,7 +22,7 @@ avaliadores	integer
 select * from usuario;
 
 create table produto(
-id          integer not null primary key auto_increment,
+id          integer not null primary key,
 nome		varchar(30) not null,
 cnpj		varchar(30),
 telefone	varchar(20),
