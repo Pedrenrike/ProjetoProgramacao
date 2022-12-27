@@ -22,11 +22,19 @@ avaliadores	integer
 select * from usuario;
 
 create table produto(
-id          integer not null primary key,
+id          integer not null primary key auto_increment,
 nome		varchar(30) not null,
-cnpj		varchar(30),
-telefone	varchar(20),
-nomeF		varchar(30)	not null
+decricao	varchar(30),
+quant 		integer,
+valor		double(9,2),
+comissao	double(9,2)
+);
+
+create table servico(
+id          integer not null primary key auto_increment,
+nome		varchar(30) not null,
+decricao	varchar(30),
+valor		double(9,2)
 );
 
 drop database projeto;
