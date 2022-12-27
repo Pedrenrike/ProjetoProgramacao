@@ -10,6 +10,7 @@ public class Vender extends javax.swing.JFrame {
         desc.setText(descrição);
         preço.setText(""+valor);
         
+        
         this.quant = quant;
     }
 
@@ -314,6 +315,12 @@ public class Vender extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "Produto vendido!");
             quant = quant - Integer.parseInt(quanti.getText());
+            double minhanota = Double.parseDouble(minhaNota.getText());
+            
+            a.setNota((a.getAvaliadores() * a.getNota() + minhanota)/(a.getAvaliadores() + 1)) ;
+            AtendenteDAO aDAO = new AtendenteDAO();
+            aDAO.setNota(a.getId(), a.getNota(), a.getAvaliadores() + 1);
+            
             dispose();
         }
     }//GEN-LAST:event_comprarActionPerformed
