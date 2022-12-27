@@ -37,12 +37,13 @@ public class ProdutoDAO {
                     String produto = rst.getString("nome");
                     int quant = rst.getInt("quant");
                     Double valor = rst.getDouble("valor");
-                    double comissão = rst.getDouble("comissão");
-                    String descrição = rst.getString("descrição");
+                    double comissão = rst.getDouble("comissao");
+                    String descrição = rst.getString("descricao");
                     
                     achou = true;
                     
                     Vender v  = new Vender(produto, quant, valor, comissão, descrição);
+                    v.setVisible(true);
                 }
                 else{
                     System.out.println("Deu erro!");
