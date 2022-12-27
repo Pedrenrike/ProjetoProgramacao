@@ -2,7 +2,7 @@ create database projeto;
 use projeto;
 
 create table usuario(
-id			integer not null primary key,
+id			integer not null primary key auto_increment,
 login		varchar(30) not null,
 senha		varchar(30) not null,
 cpf			varchar(20),
