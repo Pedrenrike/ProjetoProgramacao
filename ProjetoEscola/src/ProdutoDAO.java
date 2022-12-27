@@ -24,31 +24,34 @@ public class ProdutoDAO {
             System.out.println("Erro ao inserir produto: " + e);
         }
     }
-    public Produto consultarProduto(String nome){
+    public boolean consultarProduto(String nome){
         String sql="select * from produto;";
+        boolean achou = false;
         
         try {
             PreparedStatement sttmt=connection.prepareStatement(sql);
             ResultSet rst=sttmt.executeQuery();
             while(rst.next()){
                 if(nome.equals(rst.getString("nome"))){
-                    Produto produto = new Produto();
                     
-                    produto.setId(rst.getInt("id"));
-                    produto.setNome(rst.getString("nome"));
-                    produto.setQuant(rst.getInt("quant"));
-                    produto.setValor(rst.getDouble("valor"));
-                    produto.setComissão(rst.getDouble("comissão"));
-                    produto.setDescrição(rst.getString("descrição"));
+                    String produto = rst.getString("nome");
+                    int quant = rst.getInt("quant");
+                    Double valor = rst.getDouble("valor");
+                    double comissão = rst.getDouble("comissão");
+                    String descrição = rst.getString("descrição");
                     
-                    return produto;
+                    achou = true;
+                    
+                    Vender v  = new Vender(produto, quant, valor, comissão, descrição);
+                }
+                else{
+                    System.out.println("Deu erro!");
                 }
             }
         } catch (SQLException ex) {
             System.out.println("Erro na consulta de pessoa: "+ex);
         }
-        Produto p = new Produto();
-        return p;
+        return achou;
     }
     
     public ArrayList<Produto> pegarProdutos(){

@@ -1,8 +1,18 @@
-public class TelaAtendente extends javax.swing.JFrame {
 
-    public TelaAtendente(String nome, String CPF, String idU) {
+import javax.swing.JOptionPane;
+
+public class TelaAtendente extends javax.swing.JFrame {
+    private String senha, usuario;
+    private String CPF, idU;
+
+    public TelaAtendente(String nome, String senha, String CPF, String idU) {
         initComponents();
+        this.CPF = CPF;
+        this.idU = idU;
+        this.usuario = nome;
+        this.senha = senha;
         Usuario u = new Usuario();
+        
         login.setText(nome);
         cpf.setText(CPF);
         id.setText(idU);
@@ -431,7 +441,6 @@ public class TelaAtendente extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         TelaCadastro t  = new TelaCadastro();
         t.setVisible(true);
-        dispose();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -460,7 +469,8 @@ public class TelaAtendente extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(null, "Salário: ");
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
@@ -476,7 +486,6 @@ public class TelaAtendente extends javax.swing.JFrame {
 
     private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
         pesquisarProduto p = new pesquisarProduto();
-        dispose();
         
         p.setVisible(true);
     }//GEN-LAST:event_jToggleButton4ActionPerformed

@@ -7,9 +7,9 @@ public class AtendenteDAO extends UsuarioDAO{
         connection = new Conexao().getConexao();
     }
     
-    public Atendente consultarFuncionario(String func){
-        String sql1="select * from pessoa;";
-        String sql2="select * from funcionario;";
+    public Atendente consultarAtendente(String atendente){
+        String sql1="select * from usuario;";
+        String sql2="select * from atendente;";
         
         Atendente a = new Atendente();
         
@@ -21,7 +21,7 @@ public class AtendenteDAO extends UsuarioDAO{
             while(rst1.next()){
                 
                 
-                if(func.equals(rst1.getString("login"))){
+                if(atendente.equals(rst1.getString("login"))){
                     a.setLogin(rst1.getString("login"));
                     a.setTelefone(rst1.getString("telefone"));
                     a.setNota(rst2.getDouble("nota"));

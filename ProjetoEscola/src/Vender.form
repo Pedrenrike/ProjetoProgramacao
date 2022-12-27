@@ -288,6 +288,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="minhaNota">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="minhaNotaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
@@ -378,7 +381,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="valor">
+        <Component class="javax.swing.JLabel" name="pre&#xe7;o">
           <Properties>
             <Property name="text" type="java.lang.String" value="R$000.000,00"/>
           </Properties>
@@ -398,7 +401,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="descri&#xe7;&#xe3;o">
+        <Component class="javax.swing.JLabel" name="desc">
           <Properties>
             <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o do produto"/>
           </Properties>
@@ -418,7 +421,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="quant">
+        <Component class="javax.swing.JTextField" name="quanti">
           <Properties>
             <Property name="text" type="java.lang.String" value="                     "/>
           </Properties>

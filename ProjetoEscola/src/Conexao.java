@@ -1,5 +1,4 @@
 import java.sql.*;
-
 public class Conexao {
     static Connection connection = null;
     String url = "jdbc:mysql://localhost:3306/projeto";
@@ -14,7 +13,6 @@ public class Conexao {
             System.out.println("Problema na conexao: " + e.getMessage());
         }
     }
-
     public Connection getConexao() {
         return connection;
     }   
