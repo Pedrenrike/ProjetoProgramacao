@@ -4,7 +4,10 @@ public class CadastrarProdutos extends javax.swing.JFrame {
     
     public void removendoInformacoes() {
         nomeProduto.setText("");
-        idProduto.setText("");
+        descricaoProduto.setText("");
+        quantProduto.setText("");
+        valorProduto.setText("");
+        valorComissao.setText("");
     }
     
     public CadastrarProdutos() {
@@ -37,18 +40,16 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         JLabel = new javax.swing.JLabel();
-        JLabel3 = new javax.swing.JLabel();
         nomeProduto = new javax.swing.JTextField();
-        idProduto = new javax.swing.JTextField();
         cadastrarProduto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         quantProduto = new javax.swing.JTextField();
         JLabel6 = new javax.swing.JLabel();
         JLabel1 = new javax.swing.JLabel();
         JLabel7 = new javax.swing.JLabel();
-        descriçãoProduto = new javax.swing.JTextField();
+        descricaoProduto = new javax.swing.JTextField();
         valorProduto = new javax.swing.JTextField();
-        valorComissão = new javax.swing.JTextField();
+        valorComissao = new javax.swing.JTextField();
         JLabel8 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -162,7 +163,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Senha:");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro");
 
         jPanel1.setBackground(new java.awt.Color(32, 27, 44));
@@ -172,13 +173,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         JLabel.setForeground(new java.awt.Color(255, 255, 255));
         JLabel.setText("Produto:");
         jPanel1.add(JLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 20));
-
-        JLabel3.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        JLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel3.setText("Id:");
-        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 20));
         jPanel1.add(nomeProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 180, 30));
-        jPanel1.add(idProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
 
         cadastrarProduto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cadastrarProduto.setText("Cadastrar");
@@ -187,7 +182,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
                 cadastrarProdutoActionPerformed(evt);
             }
         });
-        jPanel1.add(cadastrarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 230, 30));
+        jPanel1.add(cadastrarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 230, 30));
 
         jLabel2.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -195,12 +190,12 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         jLabel2.setText("Cadastro de Produtos");
         jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 30, 620, -1));
-        jPanel1.add(quantProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 180, 30));
+        jPanel1.add(quantProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
 
         JLabel6.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         JLabel6.setForeground(new java.awt.Color(255, 255, 255));
         JLabel6.setText("Quantidade:");
-        jPanel1.add(JLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 20));
+        jPanel1.add(JLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 20));
 
         JLabel1.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         JLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -211,14 +206,14 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         JLabel7.setForeground(new java.awt.Color(255, 255, 255));
         JLabel7.setText("Preço:");
         jPanel1.add(JLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, -1, 20));
-        jPanel1.add(descriçãoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 180, 30));
+        jPanel1.add(descricaoProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 180, 30));
         jPanel1.add(valorProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 180, 30));
-        jPanel1.add(valorComissão, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 180, 30));
+        jPanel1.add(valorComissao, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 180, 30));
 
         JLabel8.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         JLabel8.setForeground(new java.awt.Color(255, 255, 255));
         JLabel8.setText("Comissão:");
-        jPanel1.add(JLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, -1, 20));
+        jPanel1.add(JLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +223,9 @@ public class CadastrarProdutos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -236,13 +233,12 @@ public class CadastrarProdutos extends javax.swing.JFrame {
 
     private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
         String nome = nomeProduto.getText();
-        int id = Integer.parseInt(idProduto.getText());
         int quant = Integer.parseInt(quantProduto.getText());
-        String descrição = descriçãoProduto.getText();
+        String descrição = descricaoProduto.getText();
         double valor = Double.parseDouble(valorProduto.getText());
-        double comissão = Double.parseDouble(valorComissão.getText());
+        double comissão = Double.parseDouble(valorComissao.getText());
         
-        Produto produto = new Produto(id, nome, descrição, quant, comissão, valor);
+        Produto produto = new Produto(nome, descrição, quant, comissão, valor);
         ProdutoDAO produtoBanco = new ProdutoDAO();
 
         produtoBanco.inserirProduto(produto);
@@ -270,7 +266,6 @@ public class CadastrarProdutos extends javax.swing.JFrame {
     private javax.swing.JLabel JLabel;
     private javax.swing.JLabel JLabel1;
     private javax.swing.JLabel JLabel2;
-    private javax.swing.JLabel JLabel3;
     private javax.swing.JLabel JLabel4;
     private javax.swing.JLabel JLabel5;
     private javax.swing.JLabel JLabel6;
@@ -280,8 +275,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
     private javax.swing.JButton cadastrarProduto;
     private javax.swing.JComboBox<String> cidadeUsuario;
     private javax.swing.JFormattedTextField cpfUsuario;
-    private javax.swing.JTextField descriçãoProduto;
-    private javax.swing.JTextField idProduto;
+    private javax.swing.JTextField descricaoProduto;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel2;
@@ -300,7 +294,7 @@ public class CadastrarProdutos extends javax.swing.JFrame {
     private javax.swing.JTextField quantProduto;
     private javax.swing.JPasswordField senhaUsuario;
     private javax.swing.JFormattedTextField telefoneUsuario;
-    private javax.swing.JTextField valorComissão;
+    private javax.swing.JTextField valorComissao;
     private javax.swing.JTextField valorProduto;
     // End of variables declaration//GEN-END:variables
 }

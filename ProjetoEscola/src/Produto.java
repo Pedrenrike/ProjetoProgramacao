@@ -1,17 +1,16 @@
 public class Produto {
     private int id;
     private String nome;
-    private String descrição;
-    private int quant;
-    private double comissão;
+    private String descricao;
+    private int quantidade;
+    private double comissao;
     private double valor;
     
-    public Produto(int id, String nome, String descrição, int quant, double comissão, double valor) {
-        this.id = id;
+    public Produto(String nome, String descrição, int quant, double comissão, double valor) {
         this.nome = nome;
-        this.descrição = descrição;
-        this.quant = quant;
-        this.comissão = comissão;
+        this.descricao = descrição;
+        this.quantidade = quant;
+        this.comissao = comissão;
         this.valor = valor;
     }
 
@@ -34,28 +33,28 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public int getQuant() {
-        return quant;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setQuant(int quant) {
-        this.quant = quant;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
-    public double getComissão() {
-        return comissão;
+    public double getComissao() {
+        return comissao;
     }
 
-    public void setComissão(double comissão) {
-        this.comissão = comissão;
+    public void setComissao(double comissao) {
+        this.comissao = comissao;
     }
 
     public double getValor() {
