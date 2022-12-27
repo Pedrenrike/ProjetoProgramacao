@@ -14,7 +14,7 @@ atendente 	boolean
 
 create table atendente(
 salario		double(9,2),
-id			integer primary key,
+id			integer primary key auto_increment,
 nota		double(1,1),
 avaliadores	integer
 );
@@ -22,7 +22,7 @@ avaliadores	integer
 select * from usuario;
 
 create table produto(
-id          integer not null primary key,
+id          integer not null primary key auto_increment,
 nome		varchar(30) not null,
 cnpj		varchar(30),
 telefone	varchar(20),
