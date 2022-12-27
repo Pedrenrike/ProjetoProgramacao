@@ -8,7 +8,15 @@ senha		varchar(30) not null,
 cpf			varchar(20),
 idade		integer not null,
 telefone	varchar(20),
-cidade		varchar(30)
+cidade		varchar(30),
+atendente 	boolean
+);
+
+create table atendente(
+salario		double(9,2),
+id			integer primary key,
+nota		double(1,1),
+avaliadores	integer
 );
 
 select * from usuario;
@@ -20,5 +28,7 @@ cnpj		varchar(30),
 telefone	varchar(20),
 nomeF		varchar(30)	not null
 );
+
+drop database projeto;
 
 select * from produto;
