@@ -12,31 +12,35 @@ cidade		varchar(30),
 atendente 	boolean
 );
 
+select * from usuario;
+
 create table atendente(
 salario		double(9,2),
-id			integer primary key auto_increment,
+id			integer not null primary key,
 nota		double(1,1),
 avaliadores	integer
 );
+
+select * from atendente;
 
 select * from usuario;
 
 create table produto(
 id          integer not null primary key auto_increment,
 nome		varchar(30) not null,
-decricao	varchar(30),
-quant 		integer,
+descricao	varchar(30),
+quantidade 		integer,
 valor		double(9,2),
 comissao	double(9,2)
 );
 
+select * from produto;
+
 create table servico(
 id          integer not null primary key auto_increment,
 nome		varchar(30) not null,
-decricao	varchar(30),
+descricao	varchar(30),
 valor		double(9,2)
 );
 
-drop database projeto;
-
-select * from produto;
+select * from servico;
