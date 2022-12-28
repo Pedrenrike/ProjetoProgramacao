@@ -262,7 +262,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         if(atendente){
             String id = Integer.toString(usuario.getId());
             
-            TelaAtendente t = new TelaAtendente(login, cpf, id);
+            TelaAtendente t = new TelaAtendente(login, id);
             t.setVisible(true);
         }
         else{

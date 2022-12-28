@@ -1,22 +1,13 @@
 import java.awt.Color;
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author Edilma
- */
 public class TelaProduto extends javax.swing.JFrame {
-
-    /**
-     * Creates new form TelaProduto
-     */
+    
+    public static double tot;
+    
     public TelaProduto() {
         initComponents();
         
@@ -34,6 +25,11 @@ public class TelaProduto extends javax.swing.JFrame {
         pesquisaProduto = new javax.swing.JTextField();
         pesquisaBotao = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        comprarBotao = new javax.swing.JButton();
+        idProduto = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        valorTotal = new javax.swing.JTextField();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -79,6 +75,48 @@ public class TelaProduto extends javax.swing.JFrame {
 
         jLabel1.setText("Pesquisar produto pelo nome:");
 
+        comprarBotao.setText("Comprar");
+        comprarBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comprarBotaoActionPerformed(evt);
+            }
+        });
+
+        idProduto.setText("Id");
+        idProduto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                idProdutoFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                idProdutoFocusLost(evt);
+            }
+        });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel2.setText("Valor: R$");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(valorTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(valorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,22 +128,37 @@ public class TelaProduto extends javax.swing.JFrame {
                         .addComponent(pesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pesquisaBotao))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(comprarBotao)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(idProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel1))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pesquisaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pesquisaBotao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comprarBotao)
+                            .addComponent(idProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,17 +166,67 @@ public class TelaProduto extends javax.swing.JFrame {
 
     private void pesquisaBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesquisaBotaoActionPerformed
         pesquisaTabelaNome(pesquisaProduto.getText());
-        
     }//GEN-LAST:event_pesquisaBotaoActionPerformed
+
+    private void idProdutoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProdutoFocusGained
+        if(idProduto.getText().equals("Id")) {
+            idProduto.setText("");
+            idProduto.setForeground(new Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_idProdutoFocusGained
+
+    private void idProdutoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idProdutoFocusLost
+        if(idProduto.getText().equals("")) {
+            idProduto.setText("Id");
+            idProduto.setForeground(new Color(153, 153, 153));
+        }
+    }//GEN-LAST:event_idProdutoFocusLost
+
+    private void comprarBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comprarBotaoActionPerformed
+        try {
+            int id = tabelaProdutos.getSelectedRow();
+            
+            Produto produto = new Produto();
+            produto.setId(id);
+            
+            idProduto.setText(Integer.toString(id));
+            
+            
+            JOptionPane.showMessageDialog(null, "Produto comprado!");
+            TelaUser tU = new TelaUser();
+
+            String s = tabelaProdutos.getModel().getValueAt(produto.getId(), 5).toString();
+            String s2 = tabelaProdutos.getModel().getValueAt(produto.getId(), 3).toString();
+            String s3 = tabelaProdutos.getModel().getValueAt(produto.getId(), 4).toString();
+
+            double preco = Double.parseDouble(s);
+            int quantidade = Integer.parseInt(s2);
+            double comissao = Double.parseDouble(s3);
+
+            TelaUser.valorPagar = (preco * quantidade) + comissao;
+            
+            tot += TelaUser.valorPagar;
+            
+            valorTotal.setText(Double.toString(tot));
+            
+        } catch (Exception e) {
+            System.out.println("Erro na consulta de usuario: " + e);
+        }
+    }//GEN-LAST:event_comprarBotaoActionPerformed
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton comprarBotao;
+    private javax.swing.JTextField idProduto;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton pesquisaBotao;
     private javax.swing.JTextField pesquisaProduto;
     private javax.swing.JTable tabelaProdutos;
+    private javax.swing.JTextField valorTotal;
     // End of variables declaration//GEN-END:variables
 
     private void listarProdutos() {

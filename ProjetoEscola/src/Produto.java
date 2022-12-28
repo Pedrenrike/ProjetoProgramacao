@@ -6,9 +6,9 @@ public class Produto {
     private double comissao;
     private double valor;
     
-    public Produto(String nome, String descrição, int quant, double comissão, double valor) {
+    public Produto(String nome, String descricão, int quant, double comissão, double valor) {
         this.nome = nome;
-        this.descricao = descrição;
+        this.descricao = descricão;
         this.quantidade = quant;
         this.comissao = comissão;
         this.valor = valor;

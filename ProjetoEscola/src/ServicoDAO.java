@@ -1,6 +1,4 @@
 import java.sql.*;
-import java.util.*;
-import javax.swing.JOptionPane;
 
 public class ServicoDAO {
     Connection connection;
@@ -10,13 +8,13 @@ public class ServicoDAO {
     }
     
     public void inserirServico(Servico s) {
-        String sql = "insert into servico(id, nome) values (?, ?);";
+        String sql = "insert into servico(nome, descricao, valor) values (?, ?, ?);";
         
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
-            
-            ps.setInt(1, s.getId());
-            ps.setString(2, s.getNome());
+            ps.setString(1, s.getNome());
+            ps.setString(2, s.getDescricao());
+            ps.setDouble(3, s.getValor());
             
             ps.executeUpdate();
             System.out.println("Serviço contratado!");

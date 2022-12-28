@@ -263,11 +263,13 @@ public class TelaLogin extends javax.swing.JFrame {
                 if(usuario.isAtendente()) {
                     String id = Integer.toString(usuario.getId());
                     
-                    TelaAtendente telaA = new TelaAtendente(usuario.getLogin(), usuario.getCpf(), id);
+                    TelaAtendente telaA = new TelaAtendente(u, id);
                     telaA.setVisible(true);
                 } else {
                     TelaUser telaU = new TelaUser();
                     telaU.setVisible(true);
+                    
+                    TelaUser.login.setText(u);
                 }
                 
             } else 

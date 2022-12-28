@@ -4,7 +4,6 @@ public class ContratarServicos extends javax.swing.JFrame {
     
     public void removendoInformacoes() {
         nomeServico.setText("");
-        idServico.setText("");
         descriçãoServico.setText("");
         valorServico.setText("");
     }
@@ -39,9 +38,7 @@ public class ContratarServicos extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         JLabel = new javax.swing.JLabel();
-        JLabel3 = new javax.swing.JLabel();
         nomeServico = new javax.swing.JTextField();
-        idServico = new javax.swing.JTextField();
         cadastrarProduto = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         JLabel1 = new javax.swing.JLabel();
@@ -160,7 +157,7 @@ public class ContratarServicos extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Senha:");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro");
 
         jPanel1.setBackground(new java.awt.Color(32, 27, 44));
@@ -170,13 +167,7 @@ public class ContratarServicos extends javax.swing.JFrame {
         JLabel.setForeground(new java.awt.Color(255, 255, 255));
         JLabel.setText("Produto:");
         jPanel1.add(JLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 20));
-
-        JLabel3.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
-        JLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        JLabel3.setText("Id:");
-        jPanel1.add(JLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 20));
         jPanel1.add(nomeServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 180, 30));
-        jPanel1.add(idServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 180, 30));
 
         cadastrarProduto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cadastrarProduto.setText("Cadastrar");
@@ -185,7 +176,7 @@ public class ContratarServicos extends javax.swing.JFrame {
                 cadastrarProdutoActionPerformed(evt);
             }
         });
-        jPanel1.add(cadastrarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 230, 30));
+        jPanel1.add(cadastrarProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 230, 30));
 
         jLabel2.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,9 +193,9 @@ public class ContratarServicos extends javax.swing.JFrame {
         JLabel7.setFont(new java.awt.Font("Fira Code", 1, 14)); // NOI18N
         JLabel7.setForeground(new java.awt.Color(255, 255, 255));
         JLabel7.setText("Preço:");
-        jPanel1.add(JLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, -1, 20));
+        jPanel1.add(JLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, 20));
         jPanel1.add(descriçãoServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 180, 30));
-        jPanel1.add(valorServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 180, 30));
+        jPanel1.add(valorServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 180, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,11 +219,10 @@ public class ContratarServicos extends javax.swing.JFrame {
 
     private void cadastrarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarProdutoActionPerformed
         String nome = nomeServico.getText();
-        int id = Integer.parseInt(idServico.getText());
         String descrição = descriçãoServico.getText();
         double valor = Double.parseDouble(valorServico.getText());
         
-        Servico servico = new Servico(id, nome, descrição, valor);
+        Servico servico = new Servico(nome, descrição, valor);
         ServicoDAO servicoBanco = new ServicoDAO();
 
         servicoBanco.inserirServico(servico);
@@ -260,7 +250,6 @@ public class ContratarServicos extends javax.swing.JFrame {
     private javax.swing.JLabel JLabel;
     private javax.swing.JLabel JLabel1;
     private javax.swing.JLabel JLabel2;
-    private javax.swing.JLabel JLabel3;
     private javax.swing.JLabel JLabel4;
     private javax.swing.JLabel JLabel5;
     private javax.swing.JLabel JLabel7;
@@ -269,7 +258,6 @@ public class ContratarServicos extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cidadeUsuario;
     private javax.swing.JFormattedTextField cpfUsuario;
     private javax.swing.JTextField descriçãoServico;
-    private javax.swing.JTextField idServico;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JLabel jLabel2;
